@@ -101,6 +101,47 @@
         max-width: 600px;
       }
 
+      /* --- Mission Grid --- */
+      .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 60px 10%;
+        background: var(--light-blue);
+        align-items: stretch;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .card-image-only {
+        padding: 0 !important;
+        overflow: hidden;
+        display: flex;
+      }
+
+      .mission-right-img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .mission-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .mission-item i {
+        color: var(--primary-yellow);
+        font-size: 1.5rem;
+      }
+
       /* --- Impact Stats --- */
       .impact-bar {
         background: #fff;
@@ -115,104 +156,42 @@
         font-size: 2rem;
       }
 
-      /* --- Mission Section & Testimonial --- */
-      .mission-grid {
-        padding: 60px 10%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        background: var(--light-blue);
-      }
-
-      .card {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-      .mission-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-      .mission-item i {
-        color: var(--primary-yellow);
-        font-size: 1.5rem;
-      }
-
-      .testimonial-img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
-
-
-      /* Custom class for the Mission Grid container to ensure alignment */
-.mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: stretch; /* This makes both cards equal height */
-}
-
-/* Remove padding from the right-side card to let the image bleed to the edges */
-.card-image-only {
-    padding: 0 !important;
-    overflow: hidden;
-    display: flex;
-}
-
-/* Custom class for the Mission Grid container to ensure alignment */
-.mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: stretch; /* This makes both cards equal height */
-}
-
-/* Remove padding from the right-side card to let the image bleed to the edges */
-.card-image-only {
-    padding: 0 !important;
-    overflow: hidden;
-    display: flex;
-}
-
-/* Make the image fill the entire div height and width */
-.mission-right-img {
-    width: 100%;
-    height: 500px;
-    /* min-height: 300px;  */
-    object-fit: cover;
-    display: block;
-}
-
-      /* --- Image Gallery Section --- */
+      /* --- UPDATED: Image Gallery Carousel --- */
       .gallery-container {
         padding: 60px 10%;
         text-align: center;
       }
 
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      .gallery-carousel {
+        display: flex;
         gap: 20px;
-        margin-top: 30px;
+        overflow-x: auto;
+        padding: 20px 0;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+      }
+
+      .gallery-carousel::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
       }
 
       .gallery-item {
-        width: 100%;
-        height: 200px;
+        min-width: 300px;
+        height: 250px;
         object-fit: cover;
-        border-radius: 10px;
+        border-radius: 12px;
+        scroll-snap-align: start;
         transition: transform 0.3s ease;
-        cursor: pointer;
+        cursor: grab;
+      }
+
+      .gallery-item:active {
+        cursor: grabbing;
       }
 
       .gallery-item:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
       }
 
       /* --- How It Works --- */
@@ -316,6 +295,9 @@
           flex-direction: column;
           gap: 30px;
         }
+        .gallery-item {
+          min-width: 80%;
+        }
       }
     </style>
   </head>
@@ -356,26 +338,7 @@
       </div>
     </section>
 
-    <!-- <section class="impact-bar">
-      <div class="stat-item">
-        <h3>5+</h3>
-        <p>Years of Excellence</p>
-      </div>
-      <div class="stat-item">
-        <h3>500+</h3>
-        <p>Singers Found</p>
-      </div>
-      <div class="stat-item">
-        <h3>60+</h3>
-        <p>Events Organized</p>
-      </div>
-      <div class="stat-item">
-        <h3>1000+</h3>
-        <p>Audience Reached</p>
-      </div>
-    </section> -->
-
-    <!-- <section class="mission-grid">
+    <section class="mission-grid">
       <div class="card">
         <h2>The Mission</h2>
         <p style="margin-bottom: 20px; color: var(--text-gray)">
@@ -408,77 +371,15 @@
           </div>
         </div>
       </div>
-      <div
-        class="card"
-        style="
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        "
-      >
+
+      <div class="card card-image-only">
         <img
           src="https://navratanfoundations.com/assets/img/events/event-2.jpg"
-          alt="Testimonial Feature"
-          class="testimonial-img"
+          alt="Jo Aaye Wo Gaye Event"
+          class="mission-right-img"
         />
-        <img
-          src="https://randomuser.me/api/portraits/men/32.jpg"
-          style="
-            width: 80px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-yellow);
-            margin-bottom: 15px;
-          "
-        />
-        <h3>Rahul S.</h3>
-        <p style="font-style: italic; color: var(--text-gray)">
-          "This platform gave me the confidence to share my voice with the
-          world. The live orchestra experience is surreal!"
-        </p>
       </div>
-    </section> -->
-
-
-    <section class="mission-grid">
-  <div class="card">
-    <h2>The Mission</h2>
-    <p style="margin-bottom: 20px; color: var(--text-gray)">
-      For millennia, music has not only been a source of entertainment but a
-      potent means of communication and celebration of life.
-    </p>
-    <div class="mission-item">
-      <i class="fas fa-brain"></i>
-      <div>
-        <strong>Mental Wellbeing</strong>
-        <p>Fostering community bonds and enhancing mental health through art.</p>
-      </div>
-    </div>
-    <div class="mission-item">
-      <i class="fas fa-users"></i>
-      <div>
-        <strong>Community Bonding</strong>
-        <p>Creating a communal platform for art and music in Noida.</p>
-      </div>
-    </div>
-    <div class="mission-item">
-      <i class="fas fa-star"></i>
-      <div>
-        <strong>Talent Discovery</strong>
-        <p>Identifying and nurturing untapped potential in hidden artists.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card card-image-only">
-    <img
-      src="https://navratanfoundations.com/assets/img/events/event-2.jpg"
-      alt="Jo Aaye Wo Gaye Event"
-      class="mission-right-img"
-    />
-  </div>
-</section>
+    </section>
 
     <section class="impact-bar">
       <div class="stat-item">
@@ -501,28 +402,33 @@
 
     <section class="gallery-container">
       <h2 style="margin-bottom: 10px">Our Initiative Gallery</h2>
-      <p style="color: var(--text-gray)">
-        Capturing the essence of music and community at our recent events.
+      <p style="color: var(--text-gray); margin-bottom: 10px">
+        Swipe or scroll to explore the highlights of our recent events.
       </p>
-      <div class="gallery-grid">
+      <div class="gallery-carousel">
         <img
           src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
           alt="Gallery 1"
           class="gallery-item"
         />
         <img
-          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          src="https://images.unsplash.com/photo-1514525253361-bee8718a300a?auto=format&fit=crop&q=80&w=800"
           alt="Gallery 2"
           class="gallery-item"
         />
         <img
-          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80&w=800"
           alt="Gallery 3"
           class="gallery-item"
         />
         <img
-          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          src="https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&q=80&w=800"
           alt="Gallery 4"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          alt="Gallery 5"
           class="gallery-item"
         />
       </div>
