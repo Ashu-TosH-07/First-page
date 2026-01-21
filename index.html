@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,10 +47,22 @@
         z-index: 1000;
       }
 
-      .logo img { height: 50px; }
-      nav ul { display: flex; list-style: none; }
-      nav ul li { margin: 0 15px; }
-      nav ul li a { text-decoration: none; color: #333; font-weight: 500; font-size: 14px; }
+      .logo img {
+        height: 50px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li {
+        margin: 0 15px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 14px;
+      }
 
       .btn-support {
         background: var(--primary-yellow);
@@ -66,7 +78,8 @@
 
       /* --- Hero Section --- */
       .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
           url("https://navratanfoundations.com/_next/static/media/hero-one-big.3b2cd132.jpg")
             center/cover;
         height: 500px;
@@ -76,8 +89,16 @@
         color: white;
       }
 
-      .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
-      .hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+      .hero-content h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 600px;
+      }
 
       /* --- Mission Grid --- */
       .mission-grid {
@@ -96,11 +117,28 @@
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       }
 
-      .card-image-only { padding: 0 !important; overflow: hidden; display: flex; }
-      .mission-right-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+      .card-image-only {
+        padding: 0 !important;
+        overflow: hidden;
+        display: flex;
+      }
+      .mission-right-img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+      }
 
-      .mission-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
-      .mission-item i { color: var(--primary-yellow); font-size: 1.5rem; }
+      .mission-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .mission-item i {
+        color: var(--primary-yellow);
+        font-size: 1.5rem;
+      }
 
       /* --- Impact Stats --- */
       .impact-bar {
@@ -111,7 +149,10 @@
         text-align: center;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
-      .stat-item h3 { color: var(--primary-yellow); font-size: 2rem; }
+      .stat-item h3 {
+        color: var(--primary-yellow);
+        font-size: 2rem;
+      }
 
       /* --- UPDATED: Auto Left Scrolling Gallery --- */
       .gallery-container {
@@ -120,11 +161,16 @@
         overflow: hidden; /* Bahar nikalti images ko hide karne ke liye */
       }
 
-      .gallery-title-wrapper { padding: 0 10%; margin-bottom: 30px; }
+      .gallery-title-wrapper {
+        padding: 0 10%;
+        margin-bottom: 30px;
+      }
 
       .slider-track {
         display: flex;
-        width: calc(300px * 10); /* Image width * total images (including clones) */
+        width: calc(
+          300px * 10
+        ); /* Image width * total images (including clones) */
         animation: scrollLeft 25s linear infinite;
         gap: 20px;
       }
@@ -142,144 +188,409 @@
       }
 
       @keyframes scrollLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-320px * 5)); } /* (Image width + gap) * original images */
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-320px * 5));
+        } /* (Image width + gap) * original images */
       }
 
       /* --- How It Works --- */
-      .how-it-works { padding: 60px 10%; text-align: center; }
-      .steps { display: flex; justify-content: space-between; margin-top: 40px; }
-      .step { flex: 1; }
+      .how-it-works {
+        padding: 60px 10%;
+        text-align: center;
+      }
+      .steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        position: relative;
+      }
+      .step {
+        flex: 1;
+        z-index: 1;
+      }
       .step i {
-        width: 60px; height: 60px; background: var(--primary-yellow);
-        border-radius: 50%; line-height: 60px; font-size: 1.5rem; margin-bottom: 15px;
-        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background: var(--primary-yellow);
+        border-radius: 50%;
+        line-height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
       }
 
       /* --- Dual CTA --- */
-      .dual-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 60px 10%; }
-      .cta-box { padding: 40px; text-align: center; border-radius: 15px; color: white; }
-      .cta-singer { background: #2c3e50; }
-      .cta-sponsor { background: #27ae60; }
+      .dual-cta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 60px 10%;
+      }
+      .cta-box {
+        padding: 40px;
+        text-align: center;
+        border-radius: 15px;
+        color: white;
+      }
+      .cta-singer {
+        background: #2c3e50;
+      }
+      .cta-sponsor {
+        background: #27ae60;
+      }
       .cta-box .btn {
-        display: inline-block; padding: 10px 25px; background: #fff; color: #333;
-        text-decoration: none; border-radius: 20px; margin-top: 20px; font-weight: bold;
+        display: inline-block;
+        padding: 10px 25px;
+        background: #fff;
+        color: #333;
+        text-decoration: none;
+        border-radius: 20px;
+        margin-top: 20px;
+        font-weight: bold;
       }
 
       /* --- Footer --- */
-      footer { background: var(--dark-bg); color: #fff; padding: 60px 10% 20px; }
-      .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
-      .footer-col h4 { margin-bottom: 20px; border-left: 3px solid var(--primary-yellow); padding-left: 10px; }
-      .footer-col ul { list-style: none; }
-      .footer-col ul li { margin-bottom: 10px; opacity: 0.8; }
-      .copy { text-align: center; padding-top: 20px; border-top: 1px solid #333; font-size: 0.8rem; }
+      footer {
+        background: var(--dark-bg);
+        color: #fff;
+        padding: 60px 10% 20px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-col h4 {
+        margin-bottom: 20px;
+        border-left: 3px solid var(--primary-yellow);
+        padding-left: 10px;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+      .copy {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        font-size: 0.8rem;
+      }
 
       @media (max-width: 768px) {
-        .mission-grid, .dual-cta, .footer-grid, .impact-bar { grid-template-columns: 1fr; display: block; }
-        .hero-content h1 { font-size: 2.2rem; }
-        .steps { flex-direction: column; gap: 30px; }
+        .mission-grid,
+        .dual-cta,
+        .footer-grid,
+        .impact-bar {
+          grid-template-columns: 1fr;
+          display: block;
+        }
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        .steps {
+          flex-direction: column;
+          gap: 30px;
+        }
+      }
+
+      /* Stats Counter Styling */
+      .counter {
+        transition: text-shadow 0.3s ease-in-out;
+      }
+
+      /* Infinite Slow Glow & Flicker Effect */
+      .flicker-infinite {
+        animation: slow-glow-flicker 3s infinite ease-in-out;
+      }
+
+      @keyframes slow-glow-flicker {
+        0%,
+        100% {
+          opacity: 1;
+          text-shadow: 0 0 5px rgba(241, 196, 15, 0.2);
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          text-shadow:
+            0 0 20px rgba(241, 196, 15, 0.8),
+            0 0 30px rgba(241, 196, 15, 0.4);
+          transform: scale(1.02);
+          color: #000;
+        }
       }
     </style>
   </head>
   <body>
     <header>
       <div class="logo">
-        <img src="https://navratanfoundations.com/wp-content/uploads/2021/05/navratan-logo.png" alt="Navratan Logo" />
+        <img
+          src="https://navratanfoundations.com/wp-content/uploads/2021/05/navratan-logo.png"
+          alt="Navratan Logo"
+        />
       </div>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Projects</a></li>
-          <li><a href="#" style="color: var(--primary-yellow)">Our Initiatives</a></li>
+          <li>
+            <a href="#" style="color: var(--primary-yellow)">Our Initiatives</a>
+          </li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <a href="#" class="btn-support">Support a Cause <i class="fas fa-arrow-right"></i></a>
+      <a href="#" class="btn-support"
+        >Support a Cause <i class="fas fa-arrow-right"></i
+      ></a>
     </header>
 
     <section class="hero">
       <div class="hero-content">
         <h1>Jo Aaye Wo Gaye</h1>
-        <p>A monthly musical platform fostering community bonds and providing hidden talents a stage with a live orchestra.</p>
-        <a href="#" class="btn-support" style="width: fit-content">Participate Now</a>
+        <p>
+          A monthly musical platform fostering community bonds and providing
+          hidden talents a stage with a live orchestra.
+        </p>
+        <a href="#" class="btn-support" style="width: fit-content"
+          >Participate Now</a
+        >
       </div>
     </section>
 
     <section class="mission-grid">
       <div class="card">
         <h2>The Mission</h2>
-        <p style="margin-bottom: 20px; color: var(--text-gray)">For millennia, music has not only been a source of entertainment but a potent means of communication and celebration of life.</p>
+        <p style="margin-bottom: 20px; color: var(--text-gray)">
+          For millennia, music has not only been a source of entertainment but a
+          potent means of communication and celebration of life.
+        </p>
         <div class="mission-item">
           <i class="fas fa-brain"></i>
-          <div><strong>Mental Wellbeing</strong><p>Fostering community bonds and enhancing mental health through art.</p></div>
+          <div>
+            <strong>Mental Wellbeing</strong>
+            <p>
+              Fostering community bonds and enhancing mental health through art.
+            </p>
+          </div>
         </div>
         <div class="mission-item">
           <i class="fas fa-users"></i>
-          <div><strong>Community Bonding</strong><p>Creating a communal platform for art and music in Noida.</p></div>
+          <div>
+            <strong>Community Bonding</strong>
+            <p>Creating a communal platform for art and music in Noida.</p>
+          </div>
         </div>
         <div class="mission-item">
           <i class="fas fa-star"></i>
-          <div><strong>Talent Discovery</strong><p>Identifying and nurturing untapped potential in hidden artists.</p></div>
+          <div>
+            <strong>Talent Discovery</strong>
+            <p>
+              Identifying and nurturing untapped potential in hidden artists.
+            </p>
+          </div>
         </div>
       </div>
       <div class="card card-image-only">
-        <img src="https://navratanfoundations.com/assets/img/events/event-2.jpg" alt="Event" class="mission-right-img" />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-2.jpg"
+          alt="Event"
+          class="mission-right-img"
+        />
       </div>
     </section>
 
     <section class="impact-bar">
-      <div class="stat-item"><h3>5+</h3><p>Years</p></div>
-      <div class="stat-item"><h3>500+</h3><p>Singers</p></div>
-      <div class="stat-item"><h3>60+</h3><p>Events</p></div>
-      <div class="stat-item"><h3>1000+</h3><p>Audience</p></div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="5">0</span>+</h3>
+        <p>Years</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="500">0</span>+</h3>
+        <p>Singers</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="60">0</span>+</h3>
+        <p>Events</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="1000">0</span>+</h3>
+        <p>Audience</p>
+      </div>
     </section>
 
     <section class="gallery-container">
       <div class="gallery-title-wrapper">
         <h2>Our Initiative Gallery</h2>
-        <p style="color: var(--text-gray)">Capturing moments of music and community.</p>
+        <p style="color: var(--text-gray)">
+          Capturing moments of music and community.
+        </p>
       </div>
-      
+
       <div class="slider-track">
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
-        <img src="https://navratanfoundations.com/assets/img/events/event-3.jpg" class="gallery-item" />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
+        <img
+          src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
+          class="gallery-item"
+        />
       </div>
     </section>
 
     <section class="how-it-works">
       <h2>How It Works</h2>
       <div class="steps">
-        <div class="step"><i class="fas fa-user-edit"></i><h4>1. Register</h4><p>Sign up for auditions.</p></div>
-        <div class="step"><i class="fas fa-microphone-alt"></i><h4>2. Perform</h4><p>Sing live with orchestra.</p></div>
-        <div class="step"><i class="fas fa-trophy"></i><h4>3. Shine</h4><p>Get recognized.</p></div>
+        <div class="step">
+          <i class="fas fa-user-edit"></i>
+          <h4>1. Register</h4>
+          <p>Sign up for our monthly audition rounds.</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-microphone-alt"></i>
+          <h4>2. Perform</h4>
+          <p>Sing live with a professional orchestra.</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-trophy"></i>
+          <h4>3. Shine</h4>
+          <p>Get recognized and join our elite talent pool.</p>
+        </div>
       </div>
     </section>
 
     <section class="dual-cta">
-      <div class="cta-box cta-singer"><h3>Singer?</h3><p>Showcase your talent.</p><a href="#" class="btn">Register</a></div>
-      <div class="cta-box cta-sponsor"><h3>Sponsor?</h3><p>Support the artists.</p><a href="#" class="btn">Sponsor</a></div>
+      <div class="cta-box cta-singer">
+        <h3>Are you a singer?</h3>
+        <p>
+          Don't let your talent remain hidden. The stage is waiting for you.
+        </p>
+        <a href="#" class="btn">Register Now</a>
+      </div>
+      <div class="cta-box cta-sponsor">
+        <h3>Want to support talent?</h3>
+        <p>Your contribution helps us provide a stage for the deserving.</p>
+        <a href="#" class="btn">Sponsor a Performer</a>
+      </div>
     </section>
 
     <footer>
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="https://navratanfoundations.com/wp-content/uploads/2021/05/navratan-logo.png" style="height:40px; filter:brightness(0) invert(1); margin-bottom:20px;" />
-          <p style="font-size: 0.9rem; opacity: 0.7">Navratan Foundations is a non-profit organization.</p>
+          <img
+            src="https://navratanfoundations.com/wp-content/uploads/2021/05/navratan-logo.png"
+            style="
+              height: 40px;
+              filter: brightness(0) invert(1);
+              margin-bottom: 20px;
+            "
+          />
+          <p style="font-size: 0.9rem; opacity: 0.7">
+            Navratan Foundations is a non-profit organization.
+          </p>
         </div>
-        <div class="footer-col"><h4>Quick Links</h4><ul><li>About</li><li>Projects</li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li>+91-7011540309</li><li>navratanjks@gmail.com</li></ul></div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>About</li>
+            <li>Projects</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>+91-7011540309</li>
+            <li>navratanjks@gmail.com</li>
+          </ul>
+        </div>
       </div>
       <div class="copy">&copy; 2026 Navratan Foundation.</div>
     </footer>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+
+      const startCounters = () => {
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-target");
+          const duration = 2500; // 2.5 seconds counting duration
+          let startTime = null;
+
+          const step = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            // Easing function for a natural feel
+            const easeOutQuad = (t) => t * (2 - t);
+            counter.innerText = Math.floor(easeOutQuad(progress) * target);
+
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              counter.innerText = target;
+              // Counting khatam hote hi infinite glow class add hogi
+              counter.classList.add("flicker-infinite");
+            }
+          };
+
+          window.requestAnimationFrame(step);
+        });
+      };
+
+      // Intersection Observer to trigger when visible
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startCounters();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      observer.observe(document.querySelector(".impact-bar"));
+    </script>
   </body>
 </html>
