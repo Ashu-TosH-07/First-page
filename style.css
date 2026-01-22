@@ -120,7 +120,7 @@ nav ul li a {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 25px; 
+  gap: 25px;
 }
 
 .mission-item {
@@ -153,7 +153,7 @@ nav ul li a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 500px; 
+  min-height: 500px;
   border-radius: 12px;
 }
 
@@ -202,7 +202,7 @@ nav ul li a {
   padding: 60px 0;
   text-align: center;
   overflow: hidden;
-  background: #fff; 
+  background: #fff;
 }
 
 .gallery-title-wrapper {
@@ -235,8 +235,8 @@ nav ul li a {
 
 .gallery-item {
   width: calc(33.33vw - 30px);
-  min-width: 350px; 
-  height: 300px; 
+  min-width: 350px;
+  height: 300px;
   object-fit: cover;
   border-radius: 15px;
   flex-shrink: 0;
@@ -263,7 +263,7 @@ nav ul li a {
 /* Mobile responsive fix */
 @media (max-width: 768px) {
   .gallery-item {
-    width: 80vw; 
+    width: 80vw;
     min-width: 280px;
   }
   @keyframes scrollLeft {
@@ -314,7 +314,7 @@ nav ul li a {
 /* --- Registration & Contact Section --- */
 .registration-contact {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr; 
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 30px;
   padding: 60px 10%;
   background: #fff;
@@ -329,16 +329,16 @@ nav ul li a {
 
 /* Left Box */
 .reg-box {
-  background: #2c3e50;
+  background:var(--primary-yellow);
   padding: 40px;
   border-radius: 15px;
-  color: white;
+  color: var(--text-dark);
   text-align: left;
 }
 
 .reg-box h3 {
   font-size: 24px;
-  color: #fff;
+  color: #212121;
   margin-bottom: 15px;
   letter-spacing: 1px;
 }
@@ -347,7 +347,8 @@ nav ul li a {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  opacity: 0.9;
+  color: var(--text-dark);
+
 }
 
 .reg-points {
@@ -370,22 +371,22 @@ nav ul li a {
   font-weight: 900;
   position: absolute;
   left: 0;
-  color: var(--primary-yellow);
+  color: #00acf0;
   font-size: 1.1rem;
 }
 
 .reg-points li strong {
-  color: var(--primary-yellow);
-  display: block; 
+  color: var(--dark-bg);
+  display: block;
   margin-bottom: 2px;
 }
 
 /* Event Highlights (Date & Place) */
 .event-highlight {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.30);
   padding: 15px 20px;
   border-radius: 10px;
-  border-left: 4px solid var(--primary-yellow);
+  border-left: 4px solid #00acf0;
 }
 
 .event-highlight span {
@@ -395,14 +396,15 @@ nav ul li a {
 }
 
 .event-highlight i {
-  color: var(--primary-yellow);
+  color: #00acf0;
   margin-right: 10px;
   width: 20px;
 }
 
 /* Right Box Style */
 .contact-box {
-  background: #27ae60; 
+  /* background: #27ae60;  */
+  background: #00acf0;
   text-align: center;
 }
 .contact-box h3 {
@@ -432,6 +434,7 @@ nav ul li a {
 
 .contact-item i {
   color: var(--primary-yellow);
+  font-size: 1.2rem;
 }
 
 .contact-btn-wrapper {
@@ -464,7 +467,7 @@ nav ul li a {
 /* Hover Effect */
 .btn-contact:hover {
   background-color: #fff;
-  color: #27ae60; /* Green color match with contact box bg */
+  color: #00acf0;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
@@ -667,7 +670,7 @@ footer {
 }
 
 .rule-card i {
-  color: #27ae60;
+  color: var(--primary-yellow);
 }
 
 .supported-by {
