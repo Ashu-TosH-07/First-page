@@ -138,6 +138,11 @@ nav ul li a {
   color: var(--primary-yellow);
   font-size: 2rem;
 }
+.stat-item p {
+  color: var(--text-gray);
+  letter-spacing: 1px;
+
+}
 
 /* --- Gallery Section --- */
 .gallery-container {
@@ -155,13 +160,13 @@ nav ul li a {
 }
 
 .gallery-title-wrapper h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #212121;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-/* Yellow line added like the image */
+/* Yellow line */
 .yellow-line {
   width: 70px;
   height: 4px;
@@ -209,7 +214,7 @@ nav ul li a {
   margin-bottom: 20px;
 }
 .how-it-works h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #212121;
 }
 .steps {
