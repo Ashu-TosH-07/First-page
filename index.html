@@ -12,320 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
-    <style>
-      :root {
-        --primary-yellow: #f1c40f;
-        --dark-bg: #1a1a1a;
-        --light-blue: #e3f2fd;
-        --text-dark: #333;
-        --text-gray: #666;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
-      body {
-        line-height: 1.6;
-        color: var(--text-dark);
-      }
-
-      /* --- Header & Nav --- */
-      header {
-        background: #fff;
-        padding: 10px 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .logo img {
-        height: 50px;
-      }
-      nav ul {
-        display: flex;
-        list-style: none;
-      }
-      nav ul li {
-        margin: 0 15px;
-      }
-      nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        font-size: 14px;
-      }
-
-      .btn-support {
-        background: var(--primary-yellow);
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        color: #000;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      /* --- Hero Section --- */
-      .hero {
-        background:
-          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("https://navratanfoundations.com/_next/static/media/hero-one-big.3b2cd132.jpg")
-            center/cover;
-        height: 500px;
-        display: flex;
-        align-items: center;
-        padding: 0 10%;
-        color: white;
-      }
-
-      .hero-content h1 {
-        font-size: 3.5rem;
-        line-height: 1.2;
-        margin-bottom: 20px;
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 600px;
-      }
-
-      /* --- Mission Grid --- */
-      .mission-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        padding: 60px 10%;
-        background: var(--light-blue);
-        align-items: stretch;
-      }
-
-      .card {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .card-image-only {
-        padding: 0 !important;
-        overflow: hidden;
-        display: flex;
-      }
-      .mission-right-img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        display: block;
-      }
-
-      .mission-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-      .mission-item i {
-        color: var(--primary-yellow);
-        font-size: 1.5rem;
-      }
-
-      /* --- Impact Stats --- */
-      .impact-bar {
-        background: #fff;
-        display: flex;
-        justify-content: space-around;
-        padding: 30px 10%;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      }
-      .stat-item h3 {
-        color: var(--primary-yellow);
-        font-size: 2rem;
-      }
-
-      /* --- UPDATED: Auto Left Scrolling Gallery --- */
-      .gallery-container {
-        padding: 60px 0;
-        text-align: center;
-        overflow: hidden; /* Bahar nikalti images ko hide karne ke liye */
-      }
-
-      .gallery-title-wrapper {
-        padding: 0 10%;
-        margin-bottom: 30px;
-      }
-
-      .slider-track {
-        display: flex;
-        width: calc(
-          300px * 10
-        ); /* Image width * total images (including clones) */
-        animation: scrollLeft 25s linear infinite;
-        gap: 20px;
-      }
-
-      .slider-track:hover {
-        animation-play-state: paused; /* Hover karne par scroll ruk jayega */
-      }
-
-      .gallery-item {
-        width: 300px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        flex-shrink: 0;
-      }
-
-      @keyframes scrollLeft {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(calc(-320px * 5));
-        } /* (Image width + gap) * original images */
-      }
-
-      /* --- How It Works --- */
-      .how-it-works {
-        padding: 60px 10%;
-        text-align: center;
-      }
-      .steps {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        position: relative;
-      }
-      .step {
-        flex: 1;
-        z-index: 1;
-      }
-      .step i {
-        width: 60px;
-        height: 60px;
-        background: var(--primary-yellow);
-        border-radius: 50%;
-        line-height: 60px;
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-      }
-
-      /* --- Dual CTA --- */
-      .dual-cta {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 60px 10%;
-      }
-      .cta-box {
-        padding: 40px;
-        text-align: center;
-        border-radius: 15px;
-        color: white;
-      }
-      .cta-singer {
-        background: #2c3e50;
-      }
-      .cta-sponsor {
-        background: #27ae60;
-      }
-      .cta-box .btn {
-        display: inline-block;
-        padding: 10px 25px;
-        background: #fff;
-        color: #333;
-        text-decoration: none;
-        border-radius: 20px;
-        margin-top: 20px;
-        font-weight: bold;
-      }
-
-      /* --- Footer --- */
-      footer {
-        background: var(--dark-bg);
-        color: #fff;
-        padding: 60px 10% 20px;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1.5fr;
-        gap: 40px;
-        margin-bottom: 40px;
-      }
-      .footer-col h4 {
-        margin-bottom: 20px;
-        border-left: 3px solid var(--primary-yellow);
-        padding-left: 10px;
-      }
-      .footer-col ul {
-        list-style: none;
-      }
-      .footer-col ul li {
-        margin-bottom: 10px;
-        opacity: 0.8;
-      }
-      .copy {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        font-size: 0.8rem;
-      }
-
-      @media (max-width: 768px) {
-        .mission-grid,
-        .dual-cta,
-        .footer-grid,
-        .impact-bar {
-          grid-template-columns: 1fr;
-          display: block;
-        }
-        .hero-content h1 {
-          font-size: 2.2rem;
-        }
-        .steps {
-          flex-direction: column;
-          gap: 30px;
-        }
-      }
-
-      /* Stats Counter Styling */
-      .counter {
-        transition: text-shadow 0.3s ease-in-out;
-      }
-
-      /* Infinite Slow Glow & Flicker Effect */
-      .flicker-infinite {
-        animation: slow-glow-flicker 3s infinite ease-in-out;
-      }
-
-      @keyframes slow-glow-flicker {
-        0%,
-        100% {
-          opacity: 1;
-          text-shadow: 0 0 5px rgba(241, 196, 15, 0.2);
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.8;
-          text-shadow:
-            0 0 20px rgba(241, 196, 15, 0.8),
-            0 0 30px rgba(241, 196, 15, 0.4);
-          transform: scale(1.02);
-          color: #000;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -428,9 +115,7 @@
     <section class="gallery-container">
       <div class="gallery-title-wrapper">
         <h2>Our Initiative Gallery</h2>
-        <p style="color: var(--text-gray)">
-          Capturing moments of music and community.
-        </p>
+        <div class="yellow-line"></div>
       </div>
 
       <div class="slider-track">
@@ -454,7 +139,6 @@
           src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
           class="gallery-item"
         />
-
         <img
           src="https://navratanfoundations.com/assets/img/events/event-3.jpg"
           class="gallery-item"
@@ -479,7 +163,10 @@
     </section>
 
     <section class="how-it-works">
-      <h2>How It Works</h2>
+      <div class="heading-wrapper">
+        <h2>How It Works</h2>
+        <div class="yellow-line"></div>
+      </div>
       <div class="steps">
         <div class="step">
           <i class="fas fa-user-edit"></i>
@@ -553,14 +240,12 @@
       const startCounters = () => {
         counters.forEach((counter) => {
           const target = +counter.getAttribute("data-target");
-          const duration = 2500; // 2.5 seconds counting duration
+          const duration = 2500;
           let startTime = null;
 
           const step = (currentTime) => {
             if (!startTime) startTime = currentTime;
             const progress = Math.min((currentTime - startTime) / duration, 1);
-
-            // Easing function for a natural feel
             const easeOutQuad = (t) => t * (2 - t);
             counter.innerText = Math.floor(easeOutQuad(progress) * target);
 
@@ -568,16 +253,13 @@
               window.requestAnimationFrame(step);
             } else {
               counter.innerText = target;
-              // Counting khatam hote hi infinite glow class add hogi
               counter.classList.add("flicker-infinite");
             }
           };
-
           window.requestAnimationFrame(step);
         });
       };
 
-      // Intersection Observer to trigger when visible
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
